@@ -1,0 +1,129 @@
+{
+  "id": "residual-03",
+  "table": [
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "variants": [
+    {
+      "class_of_x": [
+        0,
+        1
+      ],
+      "code_bits": 1,
+      "codes": [
+        "0",
+        "1"
+      ],
+      "fast_bits": 0,
+      "model": "finite deterministic one-way barrier; output only after barrier; bit transfers",
+      "representatives": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "residual_classes": 2,
+      "slow_bits": 1,
+      "table": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "temporary_bit_transfers": 2,
+      "x_size": 2,
+      "y_size": 2
+    },
+    {
+      "class_of_x": [
+        0,
+        1
+      ],
+      "code_bits": 1,
+      "codes": [
+        "0",
+        "1"
+      ],
+      "fast_bits": 1,
+      "model": "finite deterministic one-way barrier; output only after barrier; bit transfers",
+      "representatives": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "residual_classes": 2,
+      "slow_bits": 0,
+      "table": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "temporary_bit_transfers": 0,
+      "x_size": 2,
+      "y_size": 2
+    },
+    {
+      "class_of_x": [
+        0,
+        1
+      ],
+      "code_bits": 1,
+      "codes": [
+        "0",
+        "1"
+      ],
+      "fast_bits": 2,
+      "model": "finite deterministic one-way barrier; output only after barrier; bit transfers",
+      "representatives": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "residual_classes": 2,
+      "slow_bits": 0,
+      "table": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "temporary_bit_transfers": 0,
+      "x_size": 2,
+      "y_size": 2
+    }
+  ]
+}

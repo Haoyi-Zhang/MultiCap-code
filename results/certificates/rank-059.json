@@ -1,0 +1,194 @@
+{
+  "atom_count": 2,
+  "cols": 2,
+  "family": "identity",
+  "id": "rank-059",
+  "matrix": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "model": "nonnegative integer factorization rank",
+  "potential": [
+    {
+      "state": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "value": 0
+    },
+    {
+      "state": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "value": 1
+    },
+    {
+      "state": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "value": 1
+    },
+    {
+      "state": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "value": 2
+    }
+  ],
+  "rank": 2,
+  "rows": 2,
+  "source": {
+    "expression": {
+      "left": {
+        "left": {
+          "op": "const",
+          "value": 0
+        },
+        "op": "add",
+        "right": {
+          "left": {
+            "left": {
+              "op": "const",
+              "value": 1
+            },
+            "op": "mul",
+            "right": {
+              "index": 0,
+              "op": "x"
+            }
+          },
+          "op": "mul",
+          "right": {
+            "index": 0,
+            "op": "y"
+          }
+        }
+      },
+      "op": "add",
+      "right": {
+        "left": {
+          "left": {
+            "op": "const",
+            "value": 1
+          },
+          "op": "mul",
+          "right": {
+            "index": 1,
+            "op": "x"
+          }
+        },
+        "op": "mul",
+        "right": {
+          "index": 1,
+          "op": "y"
+        }
+      }
+    },
+    "left_tags": 2,
+    "right_tags": 2
+  },
+  "source_probe": {
+    "coefficient_cap": 8,
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "nodes": 13,
+    "probes": 9
+  },
+  "source_quotient": {
+    "abstract_terms": 2,
+    "coefficient_cap": 8,
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "witness": [
+    {
+      "atom": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "v": [
+        0,
+        1
+      ]
+    },
+    {
+      "atom": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "u": [
+        1,
+        0
+      ],
+      "v": [
+        1,
+        0
+      ]
+    }
+  ]
+}

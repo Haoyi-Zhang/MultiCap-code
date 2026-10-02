@@ -1,0 +1,1053 @@
+[
+  {
+    "id": "rank-000",
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-001",
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-002",
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-003",
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-004",
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-005",
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-006",
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-007",
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-008",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-009",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-010",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-011",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-012",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-013",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-014",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-015",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "family": "binary-2x2"
+  },
+  {
+    "id": "rank-016",
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-017",
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-018",
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-019",
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-020",
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-021",
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-022",
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-023",
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-024",
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-025",
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-026",
+    "matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-027",
+    "matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-028",
+    "matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-029",
+    "matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-030",
+    "matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-031",
+    "matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-032",
+    "matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-033",
+    "matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-034",
+    "matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-035",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-036",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-037",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-038",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-039",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-040",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-041",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-042",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-043",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-044",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-045",
+    "matrix": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-046",
+    "matrix": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-047",
+    "matrix": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "family": "ternary-2x2"
+  },
+  {
+    "id": "rank-048",
+    "matrix": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-049",
+    "matrix": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-050",
+    "matrix": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-051",
+    "matrix": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-052",
+    "matrix": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-053",
+    "matrix": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-054",
+    "matrix": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-055",
+    "matrix": [
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-056",
+    "matrix": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-057",
+    "matrix": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "family": "binary-3x3-selected"
+  },
+  {
+    "id": "rank-058",
+    "matrix": [
+      [
+        1
+      ]
+    ],
+    "family": "identity"
+  },
+  {
+    "id": "rank-059",
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "family": "identity"
+  },
+  {
+    "id": "rank-060",
+    "matrix": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "family": "identity"
+  },
+  {
+    "id": "rank-061",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "family": "identity"
+  },
+  {
+    "id": "rank-062",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "family": "identity"
+  },
+  {
+    "id": "rank-063",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "family": "identity"
+  }
+]

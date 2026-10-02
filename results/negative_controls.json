@@ -1,0 +1,236 @@
+{
+  "cache_rejections": [
+    {
+      "name": "wrong-optimum",
+      "result": "rejected"
+    },
+    {
+      "name": "inflated-initial-potential",
+      "result": "rejected"
+    },
+    {
+      "name": "missing-positive-successors",
+      "result": "rejected"
+    },
+    {
+      "name": "duplicate-potential-entry",
+      "result": "rejected"
+    },
+    {
+      "name": "out-of-range-state",
+      "result": "rejected"
+    },
+    {
+      "name": "truncated-trace",
+      "result": "rejected"
+    },
+    {
+      "name": "evict-absent-occurrence",
+      "result": "rejected"
+    },
+    {
+      "name": "read-resident-occurrence",
+      "result": "rejected"
+    },
+    {
+      "name": "overfill-cache",
+      "result": "rejected"
+    },
+    {
+      "name": "unsupported-capacity",
+      "result": "rejected"
+    },
+    {
+      "name": "boolean-potential-not-integer",
+      "result": "rejected"
+    },
+    {
+      "name": "unknown-action-field",
+      "result": "rejected"
+    }
+  ],
+  "factor_schedule_rejections": [
+    {
+      "name": "missing-slow-write",
+      "reason": "event 3: expected write_slow, found prefix_reset",
+      "result": "rejected"
+    },
+    {
+      "name": "wrong-slow-address",
+      "reason": "slow write has wrong factor or address",
+      "result": "rejected"
+    },
+    {
+      "name": "duplicate-slow-reload",
+      "reason": "event 14: expected right_reset, found read_slow_madd",
+      "result": "rejected"
+    },
+    {
+      "name": "out-of-range-slow-access",
+      "reason": "slow fused reload has wrong factor or address",
+      "result": "rejected"
+    }
+  ],
+  "lifecycle_tests": [
+    {
+      "name": "prefix-close",
+      "result": "passed"
+    },
+    {
+      "name": "read-cap-unwind",
+      "result": "passed"
+    }
+  ],
+  "positive_source": [
+    {
+      "expected_accept": false,
+      "name": "pure-left",
+      "outcomes": [
+        {
+          "accepted": false,
+          "checker": "numeric-probe"
+        },
+        {
+          "accepted": false,
+          "checker": "monomial-quotient"
+        }
+      ]
+    },
+    {
+      "expected_accept": false,
+      "name": "pure-right",
+      "outcomes": [
+        {
+          "accepted": false,
+          "checker": "numeric-probe"
+        },
+        {
+          "accepted": false,
+          "checker": "monomial-quotient"
+        }
+      ]
+    },
+    {
+      "expected_accept": false,
+      "name": "constant",
+      "outcomes": [
+        {
+          "accepted": false,
+          "checker": "numeric-probe"
+        },
+        {
+          "accepted": false,
+          "checker": "monomial-quotient"
+        }
+      ]
+    },
+    {
+      "expected_accept": false,
+      "name": "left-square",
+      "outcomes": [
+        {
+          "accepted": false,
+          "checker": "numeric-probe"
+        },
+        {
+          "accepted": false,
+          "checker": "monomial-quotient"
+        }
+      ]
+    },
+    {
+      "expected_accept": false,
+      "name": "right-square",
+      "outcomes": [
+        {
+          "accepted": false,
+          "checker": "numeric-probe"
+        },
+        {
+          "accepted": false,
+          "checker": "monomial-quotient"
+        }
+      ]
+    },
+    {
+      "expected_accept": false,
+      "name": "mixed-linear-nonlinear",
+      "outcomes": [
+        {
+          "accepted": false,
+          "checker": "numeric-probe"
+        },
+        {
+          "accepted": false,
+          "checker": "monomial-quotient"
+        }
+      ]
+    },
+    {
+      "expected_accept": true,
+      "name": "dead-nonlinear",
+      "outcomes": [
+        {
+          "accepted": true,
+          "checker": "numeric-probe"
+        },
+        {
+          "accepted": true,
+          "checker": "monomial-quotient"
+        }
+      ]
+    }
+  ],
+  "semantic_differences": [
+    {
+      "name": "set-deduplication",
+      "result": "distinguished"
+    },
+    {
+      "name": "max-union-as-sum",
+      "result": "distinguished"
+    },
+    {
+      "name": "bag-difference-as-antijoin",
+      "result": "distinguished"
+    },
+    {
+      "name": "outer-padding-omission",
+      "result": "distinguished"
+    }
+  ],
+  "syntax_type_rejections": [
+    {
+      "name": "cyclic-child",
+      "result": "rejected"
+    },
+    {
+      "name": "binary-schema-mismatch",
+      "result": "rejected"
+    },
+    {
+      "name": "projection-column-out-of-range",
+      "result": "rejected"
+    },
+    {
+      "name": "predicate-column-out-of-range",
+      "result": "rejected"
+    },
+    {
+      "name": "inconsistent-source-schema",
+      "result": "rejected"
+    },
+    {
+      "name": "boolean-root-not-index",
+      "result": "rejected"
+    },
+    {
+      "name": "unsupported-base-type",
+      "result": "rejected"
+    },
+    {
+      "name": "operator-outside-fragment",
+      "result": "rejected"
+    }
+  ]
+}

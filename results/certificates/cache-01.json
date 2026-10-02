@@ -1,0 +1,63 @@
+{
+  "capacity": 2,
+  "m": 3,
+  "n": 1,
+  "optimum": 4,
+  "potential": [
+    {
+      "cache": 0,
+      "done": 0,
+      "h": 4
+    },
+    {
+      "cache": 1,
+      "done": 0,
+      "h": 3
+    },
+    {
+      "cache": 2,
+      "done": 0,
+      "h": 3
+    },
+    {
+      "cache": 3,
+      "done": 1,
+      "h": 2
+    },
+    {
+      "cache": 3,
+      "done": 3,
+      "h": 1
+    },
+    {
+      "cache": 6,
+      "done": 0,
+      "h": 2
+    },
+    {
+      "cache": 6,
+      "done": 1,
+      "h": 1
+    }
+  ],
+  "search_states": 11,
+  "search_transitions": 38,
+  "trace": [
+    {
+      "evict": null,
+      "load": 0
+    },
+    {
+      "evict": null,
+      "load": 1
+    },
+    {
+      "evict": 1,
+      "load": 2
+    },
+    {
+      "evict": 2,
+      "load": 3
+    }
+  ]
+}

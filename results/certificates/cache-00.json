@@ -1,0 +1,35 @@
+{
+  "capacity": 2,
+  "m": 1,
+  "n": 1,
+  "optimum": 2,
+  "potential": [
+    {
+      "cache": 0,
+      "done": 0,
+      "h": 2
+    },
+    {
+      "cache": 1,
+      "done": 0,
+      "h": 1
+    },
+    {
+      "cache": 2,
+      "done": 0,
+      "h": 1
+    }
+  ],
+  "search_states": 4,
+  "search_transitions": 4,
+  "trace": [
+    {
+      "evict": null,
+      "load": 0
+    },
+    {
+      "evict": null,
+      "load": 1
+    }
+  ]
+}

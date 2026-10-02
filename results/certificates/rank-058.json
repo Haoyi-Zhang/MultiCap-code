@@ -1,0 +1,95 @@
+{
+  "atom_count": 1,
+  "cols": 1,
+  "family": "identity",
+  "id": "rank-058",
+  "matrix": [
+    [
+      1
+    ]
+  ],
+  "model": "nonnegative integer factorization rank",
+  "potential": [
+    {
+      "state": [
+        [
+          0
+        ]
+      ],
+      "value": 0
+    },
+    {
+      "state": [
+        [
+          1
+        ]
+      ],
+      "value": 1
+    }
+  ],
+  "rank": 1,
+  "rows": 1,
+  "source": {
+    "expression": {
+      "left": {
+        "op": "const",
+        "value": 0
+      },
+      "op": "add",
+      "right": {
+        "left": {
+          "left": {
+            "op": "const",
+            "value": 1
+          },
+          "op": "mul",
+          "right": {
+            "index": 0,
+            "op": "x"
+          }
+        },
+        "op": "mul",
+        "right": {
+          "index": 0,
+          "op": "y"
+        }
+      }
+    },
+    "left_tags": 1,
+    "right_tags": 1
+  },
+  "source_probe": {
+    "coefficient_cap": 8,
+    "matrix": [
+      [
+        1
+      ]
+    ],
+    "nodes": 7,
+    "probes": 6
+  },
+  "source_quotient": {
+    "abstract_terms": 1,
+    "coefficient_cap": 8,
+    "matrix": [
+      [
+        1
+      ]
+    ]
+  },
+  "witness": [
+    {
+      "atom": [
+        [
+          1
+        ]
+      ],
+      "u": [
+        1
+      ],
+      "v": [
+        1
+      ]
+    }
+  ]
+}
