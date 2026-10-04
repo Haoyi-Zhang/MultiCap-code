@@ -103,12 +103,7 @@ features changes the capability signature and may change the optimum.
 
 ## Provenance and external use
 
-An AI assistant contributed research formulation, proof drafts, code, generated
-input definitions, execution, analysis, manuscript drafting, and self-audit.
-The evidence is not independently blind-reviewed.  Human authors must inspect
-and take responsibility for all content and recheck current venue policies
-before any external use.  No email, account action, external model API,
-private data, GPU, institutional compute, or human-subject evidence was used.
+The evidence is not independently blind-reviewed. Authors must inspect and take responsibility for all content and recheck current venue policies before any external use. No email, account action, external model API, private data, GPU, institutional compute, or human-subject evidence was used.
 
 
 ## Additional finite validation
