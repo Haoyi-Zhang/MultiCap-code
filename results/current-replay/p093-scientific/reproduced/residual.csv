@@ -1,0 +1,17 @@
+id,residual_classes,minimal_code_bits,zero_fast_bit_transfers,fast_capacities_checked,compiled_executions_checked
+residual-00,1,0,0,2,8
+residual-01,2,1,2,3,12
+residual-02,2,1,2,3,12
+residual-03,2,1,2,3,12
+residual-04,2,1,2,3,12
+residual-05,1,0,0,2,8
+residual-06,2,1,2,3,12
+residual-07,2,1,2,3,12
+residual-08,2,1,2,3,12
+residual-09,2,1,2,3,12
+residual-10,1,0,0,2,8
+residual-11,2,1,2,3,12
+residual-12,2,1,2,3,12
+residual-13,2,1,2,3,12
+residual-14,2,1,2,3,12
+residual-15,1,0,0,2,8

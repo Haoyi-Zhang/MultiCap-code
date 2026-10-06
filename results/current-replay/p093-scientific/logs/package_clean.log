@@ -1,0 +1,21 @@
+{
+  "additional_schedule_mutations": 4,
+  "cache_certificates": 9,
+  "claim_records": 16,
+  "counted_obligations": 30083,
+  "declared_instances": 985,
+  "evidence_paths_checked": 34,
+  "external_resource_records": 24,
+  "factor_schedule_events": 313123,
+  "factor_schedules": 10743,
+  "legacy_controls": 33,
+  "package_clean_mode": true,
+  "persistent_reference_ids": 81,
+  "python_bytecode_files": 0,
+  "python_cache_directories": 0,
+  "rank_certificates": 64,
+  "reference_records": 81,
+  "residual_variants": 44,
+  "semantic_rows": 896,
+  "status": "pass"
+}

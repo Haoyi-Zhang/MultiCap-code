@@ -1,0 +1,9 @@
+family,n,residual_classes,arbitrary_bit_fast_bits,arbitrary_bit_transfers,positive_integer_rank,positive_fast_words,positive_word_transfers,occurrence_two_slot_reads,value_two_slot_reads,restartable_derived_transfers,barrier_positive_word_transfers
+bit-packing-vs-positive-counts,1,2,1,0,1,1,0,,,,
+bit-packing-vs-positive-counts,2,4,2,0,2,1,2,,,,
+bit-packing-vs-positive-counts,3,8,3,0,3,1,4,,,,
+bit-packing-vs-positive-counts,4,16,4,0,4,1,6,,,,
+bit-packing-vs-positive-counts,5,32,5,0,5,1,8,,,,
+bit-packing-vs-positive-counts,6,64,6,0,6,1,10,,,,
+occurrence-vs-value-compression,3,not-comparable,,,,,,10,6,,
+replay-vs-one-way-barrier,3,,,,3,1,4,,,0,4

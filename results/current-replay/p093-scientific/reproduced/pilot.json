@@ -1,0 +1,45 @@
+{
+  "M": 3,
+  "cpu_seconds": 0.012994936999999762,
+  "m": 3,
+  "max_rss_kib": 22356,
+  "n": 3,
+  "provenance": "recomputed diagnostic; an earlier raw pilot record was not retained",
+  "reads": 8,
+  "states_discovered": 2916,
+  "trace": [
+    {
+      "evict": null,
+      "load": 0
+    },
+    {
+      "evict": null,
+      "load": 1
+    },
+    {
+      "evict": null,
+      "load": 3
+    },
+    {
+      "evict": 0,
+      "load": 2
+    },
+    {
+      "evict": 1,
+      "load": 4
+    },
+    {
+      "evict": 3,
+      "load": 5
+    },
+    {
+      "evict": 2,
+      "load": 0
+    },
+    {
+      "evict": 0,
+      "load": 1
+    }
+  ],
+  "transitions_examined": 25548
+}

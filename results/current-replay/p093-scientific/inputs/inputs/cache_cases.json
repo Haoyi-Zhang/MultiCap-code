@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cache-00",
+    "n": 1,
+    "m": 1,
+    "capacity": 2
+  },
+  {
+    "id": "cache-01",
+    "n": 1,
+    "m": 3,
+    "capacity": 2
+  },
+  {
+    "id": "cache-02",
+    "n": 2,
+    "m": 2,
+    "capacity": 2
+  },
+  {
+    "id": "cache-03",
+    "n": 2,
+    "m": 2,
+    "capacity": 3
+  },
+  {
+    "id": "cache-04",
+    "n": 2,
+    "m": 3,
+    "capacity": 2
+  },
+  {
+    "id": "cache-05",
+    "n": 2,
+    "m": 3,
+    "capacity": 3
+  },
+  {
+    "id": "cache-06",
+    "n": 3,
+    "m": 3,
+    "capacity": 2
+  },
+  {
+    "id": "cache-07",
+    "n": 3,
+    "m": 3,
+    "capacity": 3
+  },
+  {
+    "id": "cache-08",
+    "n": 3,
+    "m": 3,
+    "capacity": 4
+  }
+]

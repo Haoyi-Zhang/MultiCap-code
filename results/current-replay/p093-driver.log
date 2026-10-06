@@ -1,0 +1,166 @@
+{
+  "schema": "artifact-check-v1",
+  "status": "PASS",
+  "failed": [],
+  "checks": [
+    {
+      "name": "audit",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "audit.py"
+      ],
+      "returncode": 0,
+      "seconds": 2.719,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/audit.log",
+      "output_tail": "{\n  \"additional_schedule_mutations\": 4,\n  \"cache_certificates\": 9,\n  \"claim_records\": 16,\n  \"counted_obligations\": 30083,\n  \"declared_instances\": 985,\n  \"evidence_paths_checked\": 34,\n  \"external_resource_records\": 24,\n  \"factor_schedule_events\": 313123,\n  \"factor_schedules\": 10743,\n  \"legacy_controls\": 33,\n  \"package_clean_mode\": false,\n  \"persistent_reference_ids\": 81,\n  \"python_bytecode_files\": 0,\n  \"python_cache_directories\": 0,\n  \"rank_certificates\": 64,\n  \"reference_records\": 81,\n  \"residual_variants\": 44,\n  \"semantic_rows\": 896,\n  \"status\": \"pass\"\n}\n"
+    },
+    {
+      "name": "run_check",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "run.py",
+        "check"
+      ],
+      "returncode": 0,
+      "seconds": 2.669,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/run_check.log",
+      "output_tail": "{\n  \"additional_schedule_mutations\": 4,\n  \"cache_certificates\": 9,\n  \"counted_obligations\": 30083,\n  \"declared_instances\": 985,\n  \"factor_schedule_events\": 313123,\n  \"factor_schedules\": 10743,\n  \"legacy_controls\": 33,\n  \"rank_certificates\": 64,\n  \"residual_variants\": 44,\n  \"semantic_rows\": 896\n}\n"
+    },
+    {
+      "name": "unittest",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 3.923,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/unittest.log",
+      "output_tail": "k\ntest_same_id_rank_058_target_mutation_is_rejected (test_revisions.PayloadBindingAudit.test_same_id_rank_058_target_mutation_is_rejected) ... ok\ntest_same_id_rank_result_row_mutation_is_rejected (test_revisions.PayloadBindingAudit.test_same_id_rank_result_row_mutation_is_rejected) ... ok\ntest_empty_left_deep_right_union_needs_eleven_frames (test_revisions.ReplayFrameRecurrence.test_empty_left_deep_right_union_needs_eleven_frames) ... ok\ntest_max_union_bound_is_left_right_asymmetric (test_revisions.ReplayFrameRecurrence.test_max_union_bound_is_left_right_asymmetric) ... ok\ntest_nested_max_union_recurrence (test_revisions.ReplayFrameRecurrence.test_nested_max_union_recurrence) ... ok\ntest_double_negative_boolean_and_noninteger_matrix_rejected (test_revisions.StrictNaturalAndSchedules.test_double_negative_boolean_and_noninteger_matrix_rejected) ... ok\ntest_four_schedule_mutations_are_rejected (test_revisions.StrictNaturalAndSchedules.test_four_schedule_mutations_are_rejected) ... ok\ntest_nonminimal_width_two_all_ones_factorization_is_feasible_not_rank_optimal (test_revisions.StrictNaturalAndSchedules.test_nonminimal_width_two_all_ones_factorization_is_feasible_not_rank_optimal) ... ok\ntest_rank_058_fractional_factor_rejected_by_both_checkers (test_revisions.StrictNaturalAndSchedules.test_rank_058_fractional_factor_rejected_by_both_checkers) ... ok\ntest_semiring_and_source_constructors_reject_non_naturals (test_revisions.StrictNaturalAndSchedules.test_semiring_and_source_constructors_reject_non_naturals) ... ok\ntest_two_buffer_schedule_with_zero_fast_words_and_multiple_factors (test_revisions.StrictNaturalAndSchedules.test_two_buffer_schedule_with_zero_fast_words_and_multiple_factors) ... ok\ntest_class_count_requires_positive_integer (test_scientific_boundaries.ExactResidualArithmetic.test_class_count_requires_positive_integer) ... ok\ntest_class_indices_reject_boolean_aliases (test_scientific_boundaries.ExactResidualArithmetic.test_class_indices_reject_boolean_aliases) ... ok\ntest_packet_numeric_metadata_requires_natural_integers (test_scientific_boundaries.ExactResidualArithmetic.test_packet_numeric_metadata_requires_natural_integers) ... ok\ntest_width_at_large_power_boundaries (test_scientific_boundaries.ExactResidualArithmetic.test_width_at_large_power_boundaries) ... ok\ntest_certificate_change_fails_comparison (test_scientific_boundaries.ReproductionComparisons.test_certificate_change_fails_comparison) ... ok\ntest_documented_measurements_may_change (test_scientific_boundaries.ReproductionComparisons.test_documented_measurements_may_change) ... ok\ntest_missing_input_directory_is_not_empty_success (test_scientific_boundaries.ReproductionComparisons.test_missing_input_directory_is_not_empty_success) ... ok\ntest_missing_or_extra_result_fails_comparison (test_scientific_boundaries.ReproductionComparisons.test_missing_or_extra_result_fails_comparison) ... ok\ntest_scientific_summary_change_fails_comparison (test_scientific_boundaries.ReproductionComparisons.test_scientific_summary_change_fails_comparison) ... ok\ntest_timeout_retains_failure_and_raw_log (test_scientific_boundaries.ReproductionComparisons.test_timeout_retains_failure_and_raw_log) ... ok\ntest_context_cannot_assert_cross_sort_equality (test_scientific_boundaries.SortedKernelContracts.test_context_cannot_assert_cross_sort_equality) ... ok\ntest_function_symbol_has_one_signature (test_scientific_boundaries.SortedKernelContracts.test_function_symbol_has_one_signature) ... ok\ntest_unused_shadowed_binder_still_checks_instantiation_sort (test_scientific_boundaries.SortedKernelContracts.test_unused_shadowed_binder_still_checks_instantiation_sort) ... ok\ntest_well_sorted_shadowing_remains_valid (test_scientific_boundaries.SortedKernelContracts.test_well_sorted_shadowing_remains_valid) ... ok\ntest_small_campaign (test_structured_cases.StructuredCaseTests.test_small_campaign) ... ok\n\n----------------------------------------------------------------------\nRan 71 tests in 3.553s\n\nOK\n"
+    },
+    {
+      "name": "formal",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "formal/check.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.114,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/formal.log",
+      "output_tail": "{\n  \"factor_polynomial_certificates_checked\": 64,\n  \"first_order_theorems_checked\": 1,\n  \"kernel_scope\": \"sorted first-order equality/implication/forall plus independent natural-semiring normalization\",\n  \"not_claimed\": \"not an external proof assistant or a verification of the Python interpreter\",\n  \"residual_theorem\": {\n    \"checked\": true,\n    \"kernel_rules\": 9,\n    \"proof_nodes\": 15,\n    \"theorem\": \"equal barrier states imply equal residual functions\"\n  },\n  \"total_target_monomials\": 169\n}\n"
+    },
+    {
+      "name": "independent_finite_checks",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "validation/independent_finite_checks.py",
+        "--root",
+        ".",
+        "--out",
+        "/home/runner/work/_temp/p093-scientific/independent.json"
+      ],
+      "returncode": 0,
+      "seconds": 0.866,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/independent_finite_checks.log",
+      "output_tail": "{\n  \"cache_two_slots\": {\n    \"instances\": 16,\n    \"rows\": [\n      {\n        \"formula\": 2,\n        \"m\": 1,\n        \"n\": 1,\n        \"opt\": 2\n      },\n      {\n        \"formula\": 3,\n        \"m\": 2,\n        \"n\": 1,\n        \"opt\": 3\n      },\n      {\n        \"formula\": 4,\n        \"m\": 3,\n        \"n\": 1,\n        \"opt\": 4\n      },\n      {\n        \"formula\": 5,\n        \"m\": 4,\n        \"n\": 1,\n        \"opt\": 5\n      },\n      {\n        \"formula\": 3,\n        \"m\": 1,\n        \"n\": 2,\n        \"opt\": 3\n      },\n      {\n        \"formula\": 5,\n        \"m\": 2,\n        \"n\": 2,\n        \"opt\": 5\n      },\n      {\n        \"formula\": 7,\n        \"m\": 3,\n        \"n\": 2,\n        \"opt\": 7\n      },\n      {\n        \"formula\": 9,\n        \"m\": 4,\n        \"n\": 2,\n        \"opt\": 9\n      },\n      {\n        \"formula\": 4,\n        \"m\": 1,\n        \"n\": 3,\n        \"opt\": 4\n      },\n      {\n        \"formula\": 7,\n        \"m\": 2,\n        \"n\": 3,\n        \"opt\": 7\n      },\n      {\n        \"formula\": 10,\n        \"m\": 3,\n        \"n\": 3,\n        \"opt\": 10\n      },\n      {\n        \"formula\": 13,\n        \"m\": 4,\n        \"n\": 3,\n        \"opt\": 13\n      },\n      {\n        \"formula\": 5,\n        \"m\": 1,\n        \"n\": 4,\n        \"opt\": 5\n      },\n      {\n        \"formula\": 9,\n        \"m\": 2,\n        \"n\": 4,\n        \"opt\": 9\n      },\n      {\n        \"formula\": 13,\n        \"m\": 3,\n        \"n\": 4,\n        \"opt\": 13\n      },\n      {\n        \"formula\": 17,\n        \"m\": 4,\n        \"n\": 4,\n        \"opt\": 17\n      }\n    ]\n  },\n  \"existing_factor_certificates\": {\n    \"certificates_found_and_checked\": 64,\n    \"matrix_equations\": 373\n  },\n  \"integer_rank_2x2\": {\n    \"matrices\": 256,\n    \"memory_cases\": 1024,\n    \"schedule_evaluations\": 65536\n  },\n  \"interpretation\": \"post-development independent robustness evidence, not a statistical held-out set\",\n  \"residual\": {\n    \"point_evaluations\": 12634,\n    \"strict_lower_bound_cases\": 478,\n    \"trials\": 700\n  },\n  \"schema\": \"independent-finite-checks-v1\",\n  \"seconds\": 0.796175,\n  \"seed\": 7169257898698579595\n}\n"
+    },
+    {
+      "name": "structured_cases",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "validation/structured_cases.py",
+        "--out-dir",
+        "/home/runner/work/_temp/p093-scientific/structured"
+      ],
+      "returncode": 0,
+      "seconds": 1.067,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/structured_cases.log",
+      "output_tail": "{\n  \"boundary\": [\n    [\n      \"zero\",\n      1,\n      0\n    ],\n    [\n      \"identity\",\n      1,\n      1\n    ],\n    [\n      \"repeated-columns\",\n      1,\n      1\n    ],\n    [\n      \"zero\",\n      2,\n      0\n    ],\n    [\n      \"identity\",\n      2,\n      2\n    ],\n    [\n      \"repeated-columns\",\n      2,\n      1\n    ],\n    [\n      \"zero\",\n      3,\n      0\n    ],\n    [\n      \"identity\",\n      3,\n      3\n    ],\n    [\n      \"repeated-columns\",\n      3,\n      1\n    ],\n    [\n      \"zero\",\n      4,\n      0\n    ],\n    [\n      \"identity\",\n      4,\n      4\n    ],\n    [\n      \"repeated-columns\",\n      4,\n      1\n    ],\n    [\n      \"zero\",\n      5,\n      0\n    ],\n    [\n      \"identity\",\n      5,\n      5\n    ],\n    [\n      \"repeated-columns\",\n      5,\n      1\n    ],\n    [\n      \"zero\",\n      6,\n      0\n    ],\n    [\n      \"identity\",\n      6,\n      6\n    ],\n    [\n      \"repeated-columns\",\n      6,\n      1\n    ],\n    [\n      \"zero\",\n      7,\n      0\n    ],\n    [\n      \"identity\",\n      7,\n      7\n    ],\n    [\n      \"repeated-columns\",\n      7,\n      1\n    ],\n    [\n      \"zero\",\n      8,\n      0\n    ],\n    [\n      \"identity\",\n      8,\n      8\n    ],\n    [\n      \"repeated-columns\",\n      8,\n      1\n    ],\n    [\n      \"zero\",\n      9,\n      0\n    ],\n    [\n      \"identity\",\n      9,\n      9\n    ],\n    [\n      \"repeated-columns\",\n      9,\n      1\n    ],\n    [\n      \"zero\",\n      10,\n      0\n    ],\n    [\n      \"identity\",\n      10,\n      10\n    ],\n    [\n      \"repeated-columns\",\n      10,\n      1\n    ],\n    [\n      \"zero\",\n      11,\n      0\n    ],\n    [\n      \"identity\",\n      11,\n      11\n    ],\n    [\n      \"repeated-columns\",\n      11,\n      1\n    ],\n    [\n      \"zero\",\n      12,\n      0\n    ],\n    [\n      \"identity\",\n      12,\n      12\n    ],\n    [\n      \"repeated-columns\",\n      12,\n      1\n    ]\n  ],\n  \"boundary_instances\": 36,\n  \"instances\": 580,\n  \"interpretation\": \"Exact model-relative traffic comparison on fresh structured and boundary families; not a production throughput benchmark or statistical generalization estimate.\",\n  \"max_saved_traffic\": 22,\n  \"mean_saved_traffic\": 7.0588235294117645,\n  \"memory_configurations\": 4760,\n  \"metamorphic_permutations\": 580,\n  \"schema\": \"structured-finite-cases-v1\",\n  \"seconds\": 0.963692,\n  \"seed\": 3376774301772952894,\n  \"semantic_evaluations\": 23200,\n  \"zero_or_better_fraction\": 1.0\n}\n"
+    },
+    {
+      "name": "structured_cases_retained_comparison",
+      "returncode": 0,
+      "seconds": 0,
+      "output_tail": "equal=True"
+    },
+    {
+      "name": "generate_inputs",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "src/generate_inputs.py",
+        "--out",
+        "/home/runner/work/_temp/p093-scientific/inputs"
+      ],
+      "returncode": 0,
+      "seconds": 0.114,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/generate_inputs.log",
+      "output_tail": ""
+    },
+    {
+      "name": "generated_input_comparison",
+      "returncode": 0,
+      "seconds": 0,
+      "output_tail": "matched 5 files"
+    },
+    {
+      "name": "pilot",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "src/pilot.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.064,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/pilot.log",
+      "output_tail": "{\n  \"M\": 3,\n  \"cpu_seconds\": 0.012995687999999998,\n  \"m\": 3,\n  \"max_rss_kib\": 15972,\n  \"n\": 3,\n  \"provenance\": \"recomputed diagnostic; an earlier raw pilot record was not retained\",\n  \"reads\": 8,\n  \"states_discovered\": 2916,\n  \"trace\": [\n    {\n      \"evict\": null,\n      \"load\": 0\n    },\n    {\n      \"evict\": null,\n      \"load\": 1\n    },\n    {\n      \"evict\": null,\n      \"load\": 3\n    },\n    {\n      \"evict\": 0,\n      \"load\": 2\n    },\n    {\n      \"evict\": 1,\n      \"load\": 4\n    },\n    {\n      \"evict\": 3,\n      \"load\": 5\n    },\n    {\n      \"evict\": 2,\n      \"load\": 0\n    },\n    {\n      \"evict\": 0,\n      \"load\": 1\n    }\n  ],\n  \"transitions_examined\": 25548\n}\n"
+    },
+    {
+      "name": "reproduce",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "run.py",
+        "reproduce",
+        "--out",
+        "/home/runner/work/_temp/p093-scientific/reproduced"
+      ],
+      "returncode": 0,
+      "seconds": 3.02,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/reproduce.log",
+      "output_tail": "{\n  \"all_control_cases\": 37,\n  \"boundary_cases\": 5,\n  \"cache_certificate_inequalities\": 2839,\n  \"cache_instances\": 9,\n  \"cache_rejection_controls\": 12,\n  \"cache_search_transitions\": 3734,\n  \"child_processes\": 0,\n  \"claim_scope\": \"finite executable cross-checks and proof certificates accompanying separately stated general theorems\",\n  \"counted_validation_and_transition_obligations\": 30083,\n  \"cpu_seconds\": 2.898922017,\n  \"declared_program_or_certificate_instances\": 985,\n  \"exhaustive_core_input_pairs\": 81,\n  \"exhaustive_core_templates\": 11,\n  \"factor_schedule_events_checked\": 313123,\n  \"factor_schedule_legality_checks\": 10743,\n  \"factor_schedule_numeric_comparisons\": 10743,\n  \"factor_schedule_rejection_controls\": 4,\n  \"factor_schedule_slow_reads_checked\": 13794,\n  \"factor_schedule_slow_writes_checked\": 13794,\n  \"integer_rank_instances\": 64,\n  \"legacy_controls_total\": 33,\n  \"legacy_non_source_controls\": 26,\n  \"lifecycle_controls\": 2,\n  \"logical_memory_scope\": \"model-level state only; not Python allocation or a physical performance claim\",\n  \"maximum_base_reads_per_semantic_case\": 76,\n  \"maximum_logical_frames\": 6,\n  \"maximum_operators\": 5,\n  \"maximum_tuple_arity\": 2,\n  \"negative_control_failures\": 0,\n  \"obligation_count_scope\": \"legacy 30,083 definition retained for comparability; new event-level schedule checks and four schedule mutations are reported separately\",\n  \"peak_rss_kib\": 22356,\n  \"positive_bilinearity_probes\": 693,\n  \"positive_source_cases\": 7,\n  \"random_seed\": null,\n  \"rank_certificate_inequalities\": 7378,\n  \"rank_distribution\": {\n    \"0\": 2,\n    \"1\": 27,\n    \"2\": 30,\n    \"3\": 2,\n    \"4\": 1,\n    \"5\": 1,\n    \"6\": 1\n  },\n  \"recomputed_cache_pilots\": 1,\n  \"rectangle_overlap_diagnostics\": 1,\n  \"residual_compiled_executions\": 176,\n  \"residual_function_instances\": 16,\n  \"rss_scope\": \"whole Python harness including input data, Counter oracle, exact dynamic programs, and checkers; Linux KiB\",\n  \"semantic_cases\": 896,\n  \"semantic_difference_controls\": 4,\n  \"semantic_failures\": 0,\n  \"syntax_type_rejection_controls\": 8,\n  \"template_families\": 16,\n  \"total_modeled_base_reads\": 9416,\n  \"wall_seconds\": 2.9007767399999977,\n  \"workers\": 1\n}\n"
+    },
+    {
+      "name": "reproduced_result_comparison",
+      "returncode": 0,
+      "seconds": 0,
+      "output_tail": "matched 98 primary files; only documented timing/RSS fields excluded"
+    },
+    {
+      "name": "package_clean",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "audit.py",
+        "--package-clean"
+      ],
+      "returncode": 0,
+      "seconds": 2.67,
+      "raw_log": "/home/runner/work/_temp/p093-scientific/logs/package_clean.log",
+      "output_tail": "{\n  \"additional_schedule_mutations\": 4,\n  \"cache_certificates\": 9,\n  \"claim_records\": 16,\n  \"counted_obligations\": 30083,\n  \"declared_instances\": 985,\n  \"evidence_paths_checked\": 34,\n  \"external_resource_records\": 24,\n  \"factor_schedule_events\": 313123,\n  \"factor_schedules\": 10743,\n  \"legacy_controls\": 33,\n  \"package_clean_mode\": true,\n  \"persistent_reference_ids\": 81,\n  \"python_bytecode_files\": 0,\n  \"python_cache_directories\": 0,\n  \"rank_certificates\": 64,\n  \"reference_records\": 81,\n  \"residual_variants\": 44,\n  \"semantic_rows\": 896,\n  \"status\": \"pass\"\n}\n"
+    }
+  ],
+  "work_directory": "/home/runner/work/_temp/p093-scientific",
+  "scope": "full bounded reproduction and comparison",
+  "boundary": "Internal consistency and reproducibility check; not external peer review, a novelty proof, full proof-assistant mechanization, or an acceptance guarantee."
+}

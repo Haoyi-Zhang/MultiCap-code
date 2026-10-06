@@ -1,0 +1,121 @@
+{
+  "cache_two_slots": {
+    "instances": 16,
+    "rows": [
+      {
+        "formula": 2,
+        "m": 1,
+        "n": 1,
+        "opt": 2
+      },
+      {
+        "formula": 3,
+        "m": 2,
+        "n": 1,
+        "opt": 3
+      },
+      {
+        "formula": 4,
+        "m": 3,
+        "n": 1,
+        "opt": 4
+      },
+      {
+        "formula": 5,
+        "m": 4,
+        "n": 1,
+        "opt": 5
+      },
+      {
+        "formula": 3,
+        "m": 1,
+        "n": 2,
+        "opt": 3
+      },
+      {
+        "formula": 5,
+        "m": 2,
+        "n": 2,
+        "opt": 5
+      },
+      {
+        "formula": 7,
+        "m": 3,
+        "n": 2,
+        "opt": 7
+      },
+      {
+        "formula": 9,
+        "m": 4,
+        "n": 2,
+        "opt": 9
+      },
+      {
+        "formula": 4,
+        "m": 1,
+        "n": 3,
+        "opt": 4
+      },
+      {
+        "formula": 7,
+        "m": 2,
+        "n": 3,
+        "opt": 7
+      },
+      {
+        "formula": 10,
+        "m": 3,
+        "n": 3,
+        "opt": 10
+      },
+      {
+        "formula": 13,
+        "m": 4,
+        "n": 3,
+        "opt": 13
+      },
+      {
+        "formula": 5,
+        "m": 1,
+        "n": 4,
+        "opt": 5
+      },
+      {
+        "formula": 9,
+        "m": 2,
+        "n": 4,
+        "opt": 9
+      },
+      {
+        "formula": 13,
+        "m": 3,
+        "n": 4,
+        "opt": 13
+      },
+      {
+        "formula": 17,
+        "m": 4,
+        "n": 4,
+        "opt": 17
+      }
+    ]
+  },
+  "existing_factor_certificates": {
+    "certificates_found_and_checked": 64,
+    "matrix_equations": 373
+  },
+  "integer_rank_2x2": {
+    "matrices": 256,
+    "memory_cases": 1024,
+    "schedule_evaluations": 65536
+  },
+  "interpretation": "post-development independent robustness evidence, not a statistical held-out set",
+  "residual": {
+    "point_evaluations": 12634,
+    "strict_lower_bound_cases": 478,
+    "trials": 700
+  },
+  "schema": "independent-finite-checks-v1",
+  "seconds": 0.796175,
+  "seed": 7169257898698579595
+}

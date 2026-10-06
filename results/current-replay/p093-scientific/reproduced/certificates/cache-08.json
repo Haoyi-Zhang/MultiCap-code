@@ -1,0 +1,141 @@
+{
+  "capacity": 4,
+  "m": 3,
+  "n": 3,
+  "optimum": 6,
+  "potential": [
+    {
+      "cache": 0,
+      "done": 0,
+      "h": 6
+    },
+    {
+      "cache": 1,
+      "done": 0,
+      "h": 5
+    },
+    {
+      "cache": 3,
+      "done": 0,
+      "h": 4
+    },
+    {
+      "cache": 7,
+      "done": 0,
+      "h": 3
+    },
+    {
+      "cache": 8,
+      "done": 0,
+      "h": 5
+    },
+    {
+      "cache": 9,
+      "done": 1,
+      "h": 4
+    },
+    {
+      "cache": 11,
+      "done": 9,
+      "h": 3
+    },
+    {
+      "cache": 15,
+      "done": 73,
+      "h": 2
+    },
+    {
+      "cache": 15,
+      "done": 91,
+      "h": 1
+    },
+    {
+      "cache": 15,
+      "done": 219,
+      "h": 1
+    },
+    {
+      "cache": 24,
+      "done": 0,
+      "h": 4
+    },
+    {
+      "cache": 25,
+      "done": 3,
+      "h": 3
+    },
+    {
+      "cache": 27,
+      "done": 27,
+      "h": 2
+    },
+    {
+      "cache": 27,
+      "done": 31,
+      "h": 1
+    },
+    {
+      "cache": 27,
+      "done": 63,
+      "h": 1
+    },
+    {
+      "cache": 27,
+      "done": 91,
+      "h": 1
+    },
+    {
+      "cache": 27,
+      "done": 219,
+      "h": 1
+    },
+    {
+      "cache": 56,
+      "done": 0,
+      "h": 3
+    },
+    {
+      "cache": 57,
+      "done": 7,
+      "h": 2
+    },
+    {
+      "cache": 57,
+      "done": 31,
+      "h": 1
+    },
+    {
+      "cache": 57,
+      "done": 63,
+      "h": 1
+    }
+  ],
+  "search_states": 40,
+  "search_transitions": 160,
+  "trace": [
+    {
+      "evict": null,
+      "load": 0
+    },
+    {
+      "evict": null,
+      "load": 1
+    },
+    {
+      "evict": null,
+      "load": 2
+    },
+    {
+      "evict": null,
+      "load": 3
+    },
+    {
+      "evict": 3,
+      "load": 4
+    },
+    {
+      "evict": 4,
+      "load": 5
+    }
+  ]
+}

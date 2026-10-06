@@ -1,0 +1,13 @@
+{
+  "factor_polynomial_certificates_checked": 64,
+  "first_order_theorems_checked": 1,
+  "kernel_scope": "sorted first-order equality/implication/forall plus independent natural-semiring normalization",
+  "not_claimed": "not an external proof assistant or a verification of the Python interpreter",
+  "residual_theorem": {
+    "checked": true,
+    "kernel_rules": 9,
+    "proof_nodes": 15,
+    "theorem": "equal barrier states imply equal residual functions"
+  },
+  "total_target_monomials": 169
+}

@@ -1,0 +1,72 @@
+{
+  "atom_count": 0,
+  "cols": 2,
+  "family": "binary-2x2",
+  "id": "rank-000",
+  "matrix": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "model": "nonnegative integer factorization rank",
+  "potential": [
+    {
+      "state": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "value": 0
+    }
+  ],
+  "rank": 0,
+  "rows": 2,
+  "source": {
+    "expression": {
+      "op": "const",
+      "value": 0
+    },
+    "left_tags": 2,
+    "right_tags": 2
+  },
+  "source_probe": {
+    "coefficient_cap": 8,
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "nodes": 1,
+    "probes": 9
+  },
+  "source_quotient": {
+    "abstract_terms": 0,
+    "coefficient_cap": 8,
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "witness": []
+}

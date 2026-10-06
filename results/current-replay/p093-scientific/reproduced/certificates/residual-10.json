@@ -1,0 +1,81 @@
+{
+  "id": "residual-10",
+  "table": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "variants": [
+    {
+      "class_of_x": [
+        0,
+        0
+      ],
+      "code_bits": 0,
+      "codes": [
+        ""
+      ],
+      "fast_bits": 0,
+      "model": "finite deterministic one-way barrier; output only after barrier; bit transfers",
+      "representatives": [
+        [
+          0,
+          1
+        ]
+      ],
+      "residual_classes": 1,
+      "slow_bits": 0,
+      "table": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "temporary_bit_transfers": 0,
+      "x_size": 2,
+      "y_size": 2
+    },
+    {
+      "class_of_x": [
+        0,
+        0
+      ],
+      "code_bits": 0,
+      "codes": [
+        ""
+      ],
+      "fast_bits": 1,
+      "model": "finite deterministic one-way barrier; output only after barrier; bit transfers",
+      "representatives": [
+        [
+          0,
+          1
+        ]
+      ],
+      "residual_classes": 1,
+      "slow_bits": 0,
+      "table": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "temporary_bit_transfers": 0,
+      "x_size": 2,
+      "y_size": 2
+    }
+  ]
+}

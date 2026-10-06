@@ -1,0 +1,12 @@
+{
+  "additional_schedule_mutations": 4,
+  "cache_certificates": 9,
+  "counted_obligations": 30083,
+  "declared_instances": 985,
+  "factor_schedule_events": 313123,
+  "factor_schedules": 10743,
+  "legacy_controls": 33,
+  "rank_certificates": 64,
+  "residual_variants": 44,
+  "semantic_rows": 896
+}

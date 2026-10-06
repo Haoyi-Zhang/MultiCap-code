@@ -1,0 +1,119 @@
+{
+  "additive_rectangle_matrix": [
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      1,
+      1
+    ]
+  ],
+  "correct_support_value": 7,
+  "domain": {
+    "left_tags": 3,
+    "probe_x": [
+      1,
+      1,
+      1
+    ],
+    "probe_y": [
+      1,
+      1,
+      1
+    ],
+    "right_tags": 3
+  },
+  "id": "rectangle-overlap-7-vs-8",
+  "naive_additive_value": 8,
+  "overlap_cell": [
+    1,
+    1
+  ],
+  "overlap_multiplicity": 2,
+  "provenance": "deterministically reconstructed from the stated 7-versus-8 property; no earlier retained raw result was available",
+  "rectangles": [
+    {
+      "atom": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "left_indicator": [
+        1,
+        1,
+        0
+      ],
+      "right_indicator": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "atom": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "left_indicator": [
+        0,
+        1,
+        1
+      ],
+      "right_indicator": [
+        0,
+        1,
+        1
+      ]
+    }
+  ],
+  "support_union_matrix": [
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1
+    ]
+  ]
+}
