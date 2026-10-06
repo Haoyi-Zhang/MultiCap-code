@@ -63,7 +63,7 @@ Expected main logical counts are:
 - four additional factor-schedule mutation rejections;
 - 30,083 counted validation/transition obligations under the retained legacy
   counting rule, plus 10,743 event-checked schedules and 313,123 checked events;
-- 57 focused unit/mutation/integrity tests;
+- 71 focused unit/mutation/integrity tests (57 original plus 14 boundary regressions);
 - 81 audited scholarly references, each cited and carrying a persistent
   identifier; and
 - one first-order theorem plus 64 semiring identities checked by the
@@ -118,7 +118,7 @@ PYTHONDONTWRITEBYTECODE=1 python3 validation/independent_finite_checks.py \
 PYTHONDONTWRITEBYTECODE=1 python3 validation/structured_cases.py \
   --out-dir /tmp/structured-cases
 PYTHONDONTWRITEBYTECODE=1 python3 validation/check_all.py \
-  --out /tmp/artifact-check.json
+  --work-dir /tmp/p093-scientific-check --out /tmp/artifact-check.json
 ```
 
 The independent script imports none of the project implementation and rechecks
@@ -126,3 +126,13 @@ finite residual encodings, all 256 small two-by-two matrices, exact two-slot
 all-pairs costs through four by four, and all 64 retained rank-witness
 equations.  The structured cases are exact model-relative checks, not production
 performance measurements.  See `validation/README.md`.
+
+The aggregate requires a fresh work directory outside the repository and
+retains full command logs and outputs there, including failed attempts.  It
+compares all five regenerated inputs and all 98 primary reproduced result
+files, allowing only documented timing/RSS differences in summary and pilot
+JSON; scientific counts, certificates, and CSVs must match.  Omitting
+`--work-dir` creates a persistent temporary directory, whose path is reported.
+The supplied scientific-check workflow uses this full command with a bounded
+whole run and always uploads raw outputs.  Its presence is not evidence that
+it has been executed on a remote runner.

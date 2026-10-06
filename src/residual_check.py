@@ -15,6 +15,15 @@ def ceil_log2(n: int) -> int:
 
 
 def check_residual(packet: dict) -> dict:
+    for field in ('x_size','y_size','residual_classes','code_bits',
+                  'fast_bits','slow_bits','temporary_bit_transfers'):
+        if type(packet.get(field)) is not int or packet[field]<0:
+            raise ValueError(f'{field} must be a natural integer')
+    if not isinstance(packet.get('class_of_x'),list) or any(
+            type(value) is not int or value<0 for value in packet['class_of_x']):
+        raise ValueError('class indices must be natural integers')
+    if not isinstance(packet.get('codes'),list) or any(type(code) is not str for code in packet['codes']):
+        raise ValueError('codes must be bit strings')
     table=packet['table'];xs=packet['x_size'];ys=packet['y_size']
     if len(table)!=xs or xs<1 or ys<1 or any(len(r)!=ys for r in table):
         raise ValueError('bad table dimensions')

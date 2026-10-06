@@ -14,8 +14,23 @@ PYTHONDONTWRITEBYTECODE=1 python3 validation/independent_finite_checks.py --root
 PYTHONDONTWRITEBYTECODE=1 python3 validation/structured_cases.py --out-dir /tmp/structured-cases
 ```
 
-`check_all.py` runs the documented payload audit, end-to-end check, unit tests, proof kernels, both validation scripts, a fresh reproduction, input regeneration, pilot recomputation, and package-clean audit. A pass is an internal consistency result only.
+`check_all.py` runs the documented payload audit, end-to-end check, unit tests,
+proof kernels, both validation scripts, a fresh reproduction, input
+regeneration, pilot recomputation, and package-clean audit.  It compares
+regenerated inputs byte-for-byte and all primary campaign files, including
+certificates.  Only documented timing/RSS fields in summary and pilot JSON
+are ignored; the structured-case summary excludes its elapsed time.  Missing
+directories/files, scientific drift, unsuccessful commands, and timeouts fail
+the gate.  A pass is an internal consistency result only.
 
 ```sh
-PYTHONDONTWRITEBYTECODE=1 python3 validation/check_all.py --out /tmp/artifact-check.json
+PYTHONDONTWRITEBYTECODE=1 PYTHONUTF8=1 python3 -B validation/check_all.py \
+  --work-dir /tmp/p093-scientific-check --out /tmp/artifact-check.json
 ```
+
+The work directory must be fresh and outside the repository.  It retains all
+generated files and complete raw command logs, including failures; it is never
+deleted by the checker.  Without `--work-dir`, a persistent temporary directory
+is created and reported.  Each invoked command has a 150-second timeout.
+The supplied workflow additionally bounds the whole run.  `--quick` omits the
+full campaign reproduction and must not be described as a full reproduction.

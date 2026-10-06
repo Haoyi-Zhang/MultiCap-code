@@ -6,15 +6,13 @@ and describes a split between persistent fast bits and spilled slow bits.
 This module synthesizes; residual_check.py independently validates.
 """
 from __future__ import annotations
-from dataclasses import dataclass
-from math import ceil, log2
 from typing import Any, Iterable
 
 
 def bit_width(nclasses: int) -> int:
-    if nclasses < 1:
+    if type(nclasses) is not int or nclasses < 1:
         raise ValueError("at least one residual class is required")
-    return 0 if nclasses == 1 else ceil(log2(nclasses))
+    return (nclasses - 1).bit_length()
 
 
 def residual_rows(table: list[list[Any]]) -> list[tuple[Any, ...]]:

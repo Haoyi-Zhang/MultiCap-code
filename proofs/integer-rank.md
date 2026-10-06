@@ -6,9 +6,11 @@ Let `A in N^(m x n)` and let
 
     f_A(x,y) = sum_{i=1}^m sum_{j=1}^n A_ij x_i y_j.
 
-The variables are multiplicities of finitely many left and right input tags.  A
-finite tuple of output tags is handled by concatenating the corresponding
-coefficient matrices; the scalar presentation keeps notation small.
+The variables are multiplicities of finitely many left and right input tags.
+The exact traffic theorem and implemented schedule cover one scalar output.
+Concatenating the coefficient matrices of multiple outputs gives an algebraic
+lower bound on shared-summary width, not a matching multioutput schedule under
+the sole-accumulator, one-shot slow-read convention.
 
 The source syntax uses natural constants, addition, and multiplication.  An
 admission judgment accepts only zero-preserving expressions whose normal form

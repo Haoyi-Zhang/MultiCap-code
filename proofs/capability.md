@@ -80,13 +80,14 @@ are different for the same bag function.
 
 ### C3. Arbitrary bits versus positive count words
 
-Restrict x and y to Boolean n-vectors and retain the integer dot product.  The
-residual map x |-> (y |-> x dot y) is injective, so it has `2^n` classes.  The
-finite residual machine therefore needs exactly n persistent bits for zero
-spill.  In the positive count-word machine, the same coefficient matrix has
-integer rank n; with one persistent count word it needs `2(n-1)` word
-transfers.  This is a representation separation, not a conversion claiming
-that one natural word equals one bit.
+On the Boolean restriction of the integer dot product, the residual map
+x |-> (y |-> x dot y) is injective, so it has `2^n` classes.  The finite
+residual machine therefore needs exactly n persistent bits for zero spill.
+For implementations correct on all natural inputs in the positive count-word
+machine, the same coefficient matrix has integer rank n; with one persistent
+count word it needs `2(n-1)` word transfers.  The latter bound uses the
+natural-input extension, not agreement only on the Boolean restriction.
+This compares algebraic interfaces, not physical bit/word equivalence.
 
 ### C4. Occurrence identity versus value-count compression
 

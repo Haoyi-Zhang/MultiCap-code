@@ -1,0 +1,44 @@
+name: Scientific checks
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      LC_ALL: C.UTF-8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Recompute and compare the complete bounded evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout --signal=TERM --kill-after=5s 600s bash -c '
+            ulimit -v 1572864
+            ulimit -t 570
+            python -B validation/check_all.py \
+              --work-dir "$RUNNER_TEMP/p093-scientific" \
+              --out "$RUNNER_TEMP/p093-scientific-report.json"
+          ' 2>&1 | tee "$RUNNER_TEMP/p093-driver.log"
+      - name: Retain raw attempts and scientific outputs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: p093-scientific-output
+          path: |
+            ${{ runner.temp }}/p093-scientific/
+            ${{ runner.temp }}/p093-scientific-report.json
+            ${{ runner.temp }}/p093-driver.log
+          if-no-files-found: warn
+          retention-days: 14

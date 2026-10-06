@@ -118,39 +118,85 @@ def subst_formula(f:Formula,var:Var,value:Term)->Formula:
     return Forall(f.var,subst_formula(f.body,var,value))
 
 
+def validate_term(t:Term,signatures:dict)->str:
+    if not isinstance(t,(Var,App)) or type(t.name) is not str or not t.name:
+        raise TypeError('malformed sorted term')
+    if type(t.sort) is not str or not t.sort:
+        raise TypeError('term needs a nonempty sort')
+    if isinstance(t,App):
+        if not isinstance(t.args,tuple):raise TypeError('application arguments must be a tuple')
+        argument_sorts=tuple(validate_term(a,signatures) for a in t.args)
+        signature=(argument_sorts,t.sort)
+        if t.name in signatures and signatures[t.name]!=signature:
+            raise TypeError('inconsistent function signature: '+t.name)
+        signatures[t.name]=signature
+    return t.sort
+
+
+def validate_formula(f:Formula,signatures:dict)->None:
+    if isinstance(f,Eq):
+        if validate_term(f.left,signatures)!=validate_term(f.right,signatures):
+            raise TypeError('equality sort mismatch')
+    elif isinstance(f,Imp):
+        validate_formula(f.premise,signatures);validate_formula(f.conclusion,signatures)
+    elif isinstance(f,Forall):
+        if not isinstance(f.var,Var):raise TypeError('quantifier binder must be a variable')
+        validate_term(f.var,signatures);validate_formula(f.body,signatures)
+    else:raise TypeError('unknown formula node')
+
+
 def check(proof:Proof,context:Tuple[Formula,...]=())->Formula:
+    # A symbol has one input/result signature throughout this derivation.
+    signatures={}
+    def checked(p,ctx):
+        for f in ctx:validate_formula(f,signatures)
+        # An unused/shadowed instantiation term may disappear from the
+        # conclusion, but it must still be a well-sorted term of this language.
+        if isinstance(p,(Refl,ForallElim)):validate_term(p.term,signatures)
+        if isinstance(p,ForallIntro):
+            if not isinstance(p.var,Var):raise TypeError('quantifier binder must be a variable')
+            validate_term(p.var,signatures)
+        result=_infer(p,ctx,checked)
+        validate_formula(result,signatures)
+        return result
+    return checked(proof,context)
+
+
+def _infer(proof:Proof,context:Tuple[Formula,...],recur)->Formula:
     if isinstance(proof,Assumption):
         if proof.formula not in context:raise ValueError('undeclared assumption')
         return proof.formula
     if isinstance(proof,Refl):return Eq(proof.term,proof.term)
     if isinstance(proof,Symm):
-        f=check(proof.proof,context)
+        f=recur(proof.proof,context)
         if not isinstance(f,Eq):raise TypeError('symmetry requires equality')
         return Eq(f.right,f.left)
     if isinstance(proof,Trans):
-        a=check(proof.first,context);b=check(proof.second,context)
+        a=recur(proof.first,context);b=recur(proof.second,context)
         if not isinstance(a,Eq) or not isinstance(b,Eq) or a.right!=b.left:
             raise ValueError('invalid equality transitivity')
         return Eq(a.left,b.right)
     if isinstance(proof,Congr):
-        equalities=[check(p,context) for p in proof.proofs]
+        equalities=[recur(p,context) for p in proof.proofs]
         if any(not isinstance(e,Eq) for e in equalities):raise TypeError('congruence arguments')
         left=App(proof.name,tuple(e.left for e in equalities),proof.result_sort)
         right=App(proof.name,tuple(e.right for e in equalities),proof.result_sort)
         return Eq(left,right)
     if isinstance(proof,ImpIntro):
-        body=check(proof.body,context+(proof.assumption,))
+        body=recur(proof.body,context+(proof.assumption,))
         return Imp(proof.assumption,body)
     if isinstance(proof,ImpElim):
-        arrow=check(proof.implication,context);premise=check(proof.premise,context)
+        arrow=recur(proof.implication,context);premise=recur(proof.premise,context)
         if not isinstance(arrow,Imp) or arrow.premise!=premise:raise ValueError('invalid implication elimination')
         return arrow.conclusion
     if isinstance(proof,ForallIntro):
         if any(proof.var in free_formula(f) for f in context):
             raise ValueError('universal variable occurs free in context')
-        return Forall(proof.var,check(proof.body,context))
+        return Forall(proof.var,recur(proof.body,context))
     if isinstance(proof,ForallElim):
-        q=check(proof.quantified,context)
+        q=recur(proof.quantified,context)
         if not isinstance(q,Forall):raise TypeError('universal elimination requires forall')
+        if not isinstance(proof.term,(Var,App)) or term_sort(proof.term)!=q.var.sort:
+            raise TypeError('substitution sort mismatch')
         return subst_formula(q.body,q.var,proof.term)
     raise TypeError('unknown proof node')

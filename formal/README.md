@@ -6,6 +6,12 @@ implication, and universal quantification.  `residual_theorem.py` checks the
 semantic core of the residual lower bound: for every deterministic two-phase
 implementation, equal barrier states imply equal residual functions.
 
+The kernel rejects cross-sort equalities, malformed binders, and conflicting
+argument/result signatures for a function symbol across the entire derivation.
+Universal elimination checks the instantiation sort even when a shadowed or
+unused binder would make substitution leave the body unchanged.  Focused
+regressions exercise both rejection and valid shadowing.
+
 `semiring_kernel.py` is a separate natural-polynomial normalizer.  It rebuilds
 the target bilinear polynomial and the extracted factor schedule for every
 retained integer-rank packet, then checks equality after normalization.
