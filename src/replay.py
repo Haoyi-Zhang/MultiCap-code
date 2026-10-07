@@ -27,7 +27,12 @@ class Replay:
         a=row[p['i']]
         b=p['value'] if p['kind']=='eq_const' else row[p['j']]
         if a is None or b is None:return False
-        return {'eq':lambda:a==b,'eq_const':lambda:a==b,'lt':lambda:a<b,'ne':lambda:a!=b}[p['kind']]()
+        kind=p['kind']
+        if kind in ('eq','eq_const'):return a==b
+        if kind=='lt':return a<b
+        if kind=='ne':return a!=b
+        # Preserve unsupported hashable/unhashable dispatch failures as well.
+        return {}[kind]
 
     def count(self,node,value,prefix=None):
         total=0

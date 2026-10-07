@@ -75,6 +75,15 @@ checker judgments are deterministic.
 
 ## Evidence interpretation
 
+`Replay.test` dispatches its four validated predicate kinds directly, preserving
+null-false comparisons and unsupported-kind failures without creating a new
+dictionary of lambdas per comparison. Scan order, occurrence multiplicities,
+closure, read caps and all modeled metrics are unchanged. The separate portable
+`python -B tests/regression_predicate_dispatch.py -v` check uses independent
+literal bag equations and compares every retained semantic result field; CI runs
+it explicitly without changing the historical 71-test census. This is host
+bookkeeping reuse, not a tighter materialization bound or a measured speedup.
+
 The source-language oracle intentionally materializes bags; the replay
 interpreter is separate.  The exact rank and cache synthesizers are separate
 from their checkers.  Rank packets include both a factor witness and a Bellman
