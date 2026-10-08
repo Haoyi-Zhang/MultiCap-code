@@ -22,8 +22,8 @@ def run_separations():
                      'arbitrary_bit_transfers':rp['temporary_bit_transfers'],
                      'positive_integer_rank':rank['rank'],'positive_fast_words':1,
                      'positive_word_transfers':2*max(0,n-1)})
-    # Occurrence/value compression witness imported as a reported theorem-backed
-    # case; executable details remain in negative_controls.py.
+    # The remaining separation rows report theorem-backed example constants;
+    # they are not reconstructed from retained certificates here.
     rows.append({'family':'occurrence-vs-value-compression','n':3,
                  'occurrence_two_slot_reads':10,'value_two_slot_reads':6,
                  'residual_classes':'not-comparable','arbitrary_bit_fast_bits':'',

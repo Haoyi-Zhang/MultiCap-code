@@ -98,8 +98,9 @@ multiplicity, two counters suffice after six source reads.  The output
 multiplicity is nine in both executions.  Thus an occurrence lower bound is not
 a lower bound for every bag representation.
 
-The executable file `src/capability_cases.py` reconstructs these numerical
-witnesses from the retained exact certificates.
+The executable file `src/capability_cases.py` recomputes and checks the
+residual/rank separation witnesses and reports the occurrence/value-compression
+and replay/barrier examples as theorem-backed constants.
 
 ## 5. No denotation-only exact bound
 
