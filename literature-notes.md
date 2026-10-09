@@ -84,7 +84,7 @@ a scientific gap in the internal article.
 
 ## F. Complete bibliography audit
 
-The final manuscript contains 81 scholarly references, and every bibliography
+The manuscript contains 81 scholarly references, and every bibliography
 entry is cited in the text.  The machine-readable `reference-audit.csv` has one
 row for each key, recording title, year, entry type, persistent identifier,
 verification basis, access date, technical role, and manuscript location.  The
