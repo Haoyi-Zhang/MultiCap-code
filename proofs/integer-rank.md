@@ -112,10 +112,13 @@ The final T0 is copied to the append-only output.
 
 Distributivity gives exactly f_A.  The transfer cost is
 `2*max(0,r-M)`, so an arbitrary factorization proves a feasible upper bound.
-It is optimal only when an independent lower-bound certificate establishes
-`r=rho_N(A)`.  For example, the all-ones 2x2 matrix has a valid width-two
-factorization `I_2 J_2`, but its rank-one all-ones factorization proves that the
-width-two schedule is not optimal.  This regression is retained explicitly.
+Since `r>=rho_N(A)`, the schedule is traffic-optimal exactly when `r<=M` or
+`r=rho_N(A)`. Minimum width suffices at every capacity and is necessary when
+the optimum has unavoidable positive spill. Any valid factorization fitting
+in M has optimal zero traffic. For example, the all-ones 2x2 matrix has a valid
+width-two factorization `I_2 J_2` and rank one: the width-two schedule is
+suboptimal for M<2 but optimal for M>=2. A factor identity alone supplies
+feasibility, not a minimum-width proof.
 
 ### Theorem I2 (exact positive-word cost)
 
@@ -139,8 +142,11 @@ along the witness.  Unit atoms guarantee reachability.
 
 The retained 64 instances include all binary two-by-two matrices, selected
 nonbinary two-by-two and binary three-by-three cases, and identity matrices of
-orders one through six.  Before arithmetic, both the rank checker and the
-semiring kernel require genuine nonnegative Python integers; fractions,
+orders one through six. The rank checker validates natural potential states
+and values, complete residual coverage, and Bellman inequalities. The semiring
+kernel checks the natural matrix, factors, optional atoms and supplied dimensions,
+then normalizes the factor identity; it does not read potentials. Before arithmetic,
+each checker requires genuine nonnegative Python integers for the fields it reads; fractions,
 Booleans, strings, negative factors, and non-integer matrices are rejected.  A
 deliberately isolated checker retaining the unsafe `int()` coercion accepts the
 rank-058 mutation `u=[0.5], v=[2]`; both current checkers reject the same packet
