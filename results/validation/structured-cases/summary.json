@@ -188,7 +188,7 @@
   "mean_saved_traffic": 7.0588235294117645,
   "memory_configurations": 4760,
   "metamorphic_permutations": 580,
-  "schema": "structured-finite-cases-v1",
+  "schema": "structured-finite-cases",
   "seconds": 0.576932,
   "seed": 3376774301772952894,
   "semantic_evaluations": 23200,
