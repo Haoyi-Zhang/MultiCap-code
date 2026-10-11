@@ -8,10 +8,10 @@ row/column/component permutation invariance, and compares certified cut traffic
 with a column-by-column baseline. No predictive model is fit.
 """
 from __future__ import annotations
-import argparse,csv,hashlib,json,random,time
+import argparse,csv,json,random,time
 from fractions import Fraction
 from pathlib import Path
-SEED=int.from_bytes(hashlib.sha256(b"structured-finite-cases-v1-2026").digest()[:8],"big")
+SEED=3376774301772952894
 
 def mm(U,V):
  return [[sum(U[i][l]*V[l][j] for l in range(len(V))) for j in range(len(V[0]))] for i in range(len(U))]
@@ -66,7 +66,7 @@ def run(trials_per_shape=20,evals=40):
   repeated=[[i+1 for _ in range(n)] for i in range(n)]
   assert rank_q(zero)==0;assert rank_q(identity)==n;assert rank_q(repeated)==1
   boundary.extend([('zero',n,0),('identity',n,n),('repeated-columns',n,1)])
- return rows,{'schema':'structured-finite-cases-v1','seed':SEED,'instances':len({(x['n'],x['rank'],x['trial']) for x in rows}),
+ return rows,{'schema':'structured-finite-cases','seed':SEED,'instances':len({(x['n'],x['rank'],x['trial']) for x in rows}),
   'memory_configurations':len(rows),'semantic_evaluations':evaluations,'metamorphic_permutations':metamorphic,
   'boundary_instances':len(boundary),'boundary':boundary,
   'mean_saved_traffic':sum(x['saved'] for x in rows)/len(rows),'max_saved_traffic':max(x['saved'] for x in rows),

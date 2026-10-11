@@ -9,11 +9,11 @@ fragility.  It is not a held-out statistical test set and does not replace the
 general proofs.
 """
 from __future__ import annotations
-import argparse, hashlib, itertools, json, random, time
+import argparse, itertools, json, random, time
 from collections import deque
 from pathlib import Path
 
-SEED = int.from_bytes(hashlib.sha256(b"independent-finite-checks-v1-2026").digest()[:8], "big")
+SEED = 7169257898698579595
 
 def residual_rows(table):
     return {tuple(row) for row in table}
@@ -188,7 +188,7 @@ def verify_existing_factor_certificates(root):
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--root',type=Path,default=Path('.')); ap.add_argument('--out',type=Path)
     a=ap.parse_args(); t=time.time(); rng=random.Random(SEED)
-    out={'schema':'independent-finite-checks-v1','seed':SEED,
+    out={'schema':'independent-finite-checks','seed':SEED,
          'interpretation':'post-development independent robustness evidence, not a statistical held-out set',
          'residual':check_residual_trials(rng),
          'integer_rank_2x2':check_integer_rank_exhaustive(),
