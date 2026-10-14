@@ -34,7 +34,7 @@ def synthesize(table: list[list[Any]], fast_bits: int) -> dict:
         for row in rows:
             hash(row)
     except TypeError:
-        # Finite JSON/bag outputs may be lists or dictionaries. Their row
+        # Finite JSON observations may be lists or dictionaries. Their row
         # equivalence is equality, not an obligation to expose a hash key.
         for row in rows:
             found=next((i for i,rep in enumerate(representatives)

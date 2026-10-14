@@ -128,6 +128,23 @@ def main() -> None:
     checks.append({"name": "structured_cases_retained_comparison",
         "returncode": 0 if structured_same else 1, "seconds": 0, "output_tail": f"equal={structured_same}"})
 
+    structured_execution=temp/'structured-execution'
+    checks.append(execute('structured_event_execution',
+        [sys.executable,'validation/structured_cases.py','--execute-schedules',
+         '--out-dir',str(structured_execution)]))
+    expected_execution=ROOT/'results'/'validation'/'structured-execution'
+    execution_same=(expected_execution.joinpath('instances.csv').is_file()
+                    and structured_execution.joinpath('instances.csv').is_file()
+                    and expected_execution.joinpath('instances.csv').read_bytes()
+                    == structured_execution.joinpath('instances.csv').read_bytes()
+                    and expected_execution.joinpath('summary.json').is_file()
+                    and structured_execution.joinpath('summary.json').is_file()
+                    and normalized_json(expected_execution/'summary.json')
+                    == normalized_json(structured_execution/'summary.json'))
+    checks.append({'name':'structured_event_execution_comparison',
+                   'returncode':0 if execution_same else 1,'seconds':0,
+                   'output_tail':f'equal={execution_same}'})
+
     checks.append(execute("generate_inputs", [sys.executable, "src/generate_inputs.py", "--out", str(generated_inputs)]))
     inputs_same, inputs_detail = directory_bytes_equal(ROOT / "inputs", generated_inputs / "inputs")
     checks.append({"name": "generated_input_comparison", "returncode": 0 if inputs_same else 1,

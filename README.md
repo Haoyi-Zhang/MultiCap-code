@@ -65,7 +65,7 @@ Expected main logical counts are:
 - four additional factor-schedule mutation rejections;
 - 30,083 counted validation/transition obligations under the retained legacy
   counting rule, plus 10,743 event-checked schedules and 313,123 checked events;
-- 71 historical focused unit/mutation/integrity tests (57 original plus 14 boundary regressions), plus two unit-schema replay regression methods;
+- 71 historical focused unit/mutation/integrity tests (57 original plus 14 boundary regressions); the current source census has 83 discoverable methods, including four later residual-output methods, two unit-schema replay methods, four canonical bag-output methods and two event-campaign regressions;
 - 81 audited scholarly references, each cited and carrying a persistent
   identifier; and
 - one first-order theorem plus 64 semiring identities checked by the

@@ -8,17 +8,20 @@ These scripts are post-development checks within the paper's finite, model-relat
 PYTHONDONTWRITEBYTECODE=1 python3 validation/independent_finite_checks.py --root . --out /tmp/independent-finite-checks.json
 ```
 
-`structured_cases.py` constructs fresh structured matrices whose explicit nonnegative factor width is matched by exact rational rank, checks semantics and permutations, and compares the declared cut-traffic formula with a column-decomposition baseline.
+`structured_cases.py` constructs structured matrices whose explicit nonnegative factor width is matched by exact rational rank. Its default campaign checks numeric factor identities, permutations and the cut-traffic formula against a column decomposition. `--execute-schedules` additionally compiles both factorizations and independently checks the complete event streams on the same matrices and numeric draws.
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 validation/structured_cases.py --out-dir /tmp/structured-cases
+PYTHONDONTWRITEBYTECODE=1 python3 validation/structured_cases.py --execute-schedules --out-dir /tmp/structured-execution
 ```
 
 `check_all.py` runs the documented payload audit, end-to-end check, unit tests,
 proof kernels, both validation scripts, a fresh reproduction, input
 regeneration, pilot recomputation, and package-clean audit.  It compares
 regenerated inputs byte-for-byte and all primary campaign files, including
-certificates.  Only documented timing/RSS fields in summary and pilot JSON
+certificates, plus the 4,760 factor, 4,760 column and 580 permuted event schedules
+in the supplemental execution campaign. These use the same 580 matrices,
+not additional independent workloads. Only documented timing/RSS fields in summary and pilot JSON
 are ignored; the structured-case summary excludes its elapsed time.  Missing
 directories/files, scientific drift, unsuccessful commands, and timeouts fail
 the gate.  A pass is an internal consistency result only.

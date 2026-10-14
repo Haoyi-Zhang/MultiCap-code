@@ -38,9 +38,13 @@ The signature is part of the theorem statement.  A read allowance, a word
 algebra, or a free output channel is not an implementation detail that may be
 silently changed after a lower bound has been proved.
 
-For a program P and capacity M, `OPT_kappa(P,M)` is the infimum of the declared
-cost coordinate over correct implementations admitted by kappa.  It is
-infinity if no correct implementation exists.
+Fix a nonempty declared input domain D_P before execution. Compatible
+signatures use the same input domain and observations, although their input
+representations may differ. For a program P and capacity M, `OPT_kappa(P,M)`
+is the infimum, over uniform admitted implementations correct on every input
+in D_P, of the supremum over D_P of the selected per-input cost coordinate.
+The implementation is selected before the run-time input. The infimum is
+infinity if no such implementation exists.
 
 ## 3. Capability simulation
 
@@ -58,7 +62,8 @@ If `kappa <= lambda`, then for every program P and compatible capacity M,
 
 Take any correct kappa implementation I.  By the definition of the preorder,
 there is a correct lambda implementation sim(I) with cost no greater than that
-of I.  Taking the infimum over I yields the inequality.  If there is no correct
+of I on each input in the common domain. Taking the supremum over inputs and
+then the infimum over I yields the inequality. If there is no correct
 kappa implementation, the right side is infinity and the result is immediate.
 
 The theorem is elementary but prevents an important invalid inference: a lower
@@ -112,11 +117,12 @@ capability signatures above.
 
 ### Proof
 
-Let `e_star = project_unit(select_equal(X product Y))`.  On inputs supported on
-`n` tags its output multiplicity is `D_n`.  The syntax and tuple arities of
+Let `e_star = project_unit(select_equal(X product Y))`. The syntax and tuple arities of
 `e_star` are fixed independently of `n`, so the replay construction has a fixed
-sufficient logical-cell budget `s = S(e_star)`.  Choose `n > s` and supply the
-same numerical scalar `s` to both machines.  Replay has exact temporary cost
+sufficient logical-cell budget `s = S(e_star)`. Choose `n > s` and fix
+tags 1,...,n in both machines. On the common domain of all natural tag-count
+vectors `(x,y) in N^n x N^n`, both interpretations denote `D_n`. Supply
+this same restricted denotation and numerical scalar `s` to G. Replay has exact temporary cost
 zero.  The positive one-way machine has coefficient matrix `I_n`, and with `s`
 persistent count words its exact cost is `2(n-s) > 0`.  Thus the same bag
 denotation and scalar argument would force G to return two different values.
