@@ -25,6 +25,7 @@ jobs:
         run: |
           set -euo pipefail
           timeout --signal=TERM --kill-after=5s 60s bash -c 'ulimit -v 1572864; ulimit -t 55; python -B tests/regression_predicate_dispatch.py -v' 2>&1 | tee "$RUNNER_TEMP/p093-predicates.log"
+          timeout --signal=TERM --kill-after=5s 60s python -B -m unittest discover -s tests -p test_unit_schema_replay.py -v 2>&1 | tee "$RUNNER_TEMP/p093-unit-schema.log"
       - name: Recompute and compare the complete bounded evidence
         shell: bash
         run: |
@@ -46,5 +47,6 @@ jobs:
             ${{ runner.temp }}/p093-scientific-report.json
             ${{ runner.temp }}/p093-driver.log
             ${{ runner.temp }}/p093-predicates.log
+            ${{ runner.temp }}/p093-unit-schema.log
           if-no-files-found: warn
           retention-days: 14

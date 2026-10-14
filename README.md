@@ -24,7 +24,7 @@ controls, and retained results.  It does not require the paper directory.
 The mathematical measures are model-specific.  Residual classes and
 nonnegative integer rank are established concepts; the article's contribution
 is the capability-indexed semantics, strict separations, and their integration
-with typed bag compilation—not a claim to have invented those measures.
+with typed bag compilation��not a claim to have invented those measures.
 
 ## Reproduction
 
@@ -42,7 +42,7 @@ python src/pilot.py
 ```
 
 The two output directories must be absent or empty.  `audit.py` binds each full
-input payload—not merely its ID—to certificate contents, checker returns, CSV
+input payload��not merely its ID��to certificate contents, checker returns, CSV
 rows, summary fields, evidence paths, reference records, and package hygiene.
 `audit.py` and `run.py check` both execute every factor schedule through the
 independent phase/address/liveness checker as part of the payload binding.  Compare generated
@@ -63,7 +63,7 @@ Expected main logical counts are:
 - four additional factor-schedule mutation rejections;
 - 30,083 counted validation/transition obligations under the retained legacy
   counting rule, plus 10,743 event-checked schedules and 313,123 checked events;
-- 71 focused unit/mutation/integrity tests (57 original plus 14 boundary regressions);
+- 71 historical focused unit/mutation/integrity tests (57 original plus 14 boundary regressions), plus two unit-schema replay regression methods;
 - 81 audited scholarly references, each cited and carrying a persistent
   identifier; and
 - one first-order theorem plus 64 semiring identities checked by the
