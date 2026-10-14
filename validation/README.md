@@ -8,7 +8,7 @@ These scripts are post-development checks within the paper's finite, model-relat
 PYTHONDONTWRITEBYTECODE=1 python3 validation/independent_finite_checks.py --root . --out /tmp/independent-finite-checks.json
 ```
 
-`structured_cases.py` constructs structured matrices whose explicit nonnegative factor width is matched by exact rational rank. Its default campaign checks numeric factor identities, permutations and the cut-traffic formula against a column decomposition. `--execute-schedules` additionally compiles both factorizations and independently checks the complete event streams on the same matrices and numeric draws.
+`structured_cases.py` constructs structured matrices whose explicit nonnegative factor width is matched by exact rational rank. Its default campaign checks numeric factor identities, permutations and the cut-traffic formula against a fixed width-n column decomposition. `--execute-schedules` additionally compiles both factorizations and independently checks their complete event streams for every existing capacity configuration, reusing only the last numeric input pair per matrix. Each existing row/column/factor permutation is checked once at M=floor(r/2), with correspondingly reindexed inputs. The 36 boundary records remain rank-only checks.
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 validation/structured_cases.py --out-dir /tmp/structured-cases
@@ -19,9 +19,12 @@ PYTHONDONTWRITEBYTECODE=1 python3 validation/structured_cases.py --execute-sched
 proof kernels, both validation scripts, a fresh reproduction, input
 regeneration, pilot recomputation, and package-clean audit.  It compares
 regenerated inputs byte-for-byte and all primary campaign files, including
-certificates, plus the 4,760 factor, 4,760 column and 580 permuted event schedules
-in the supplemental execution campaign. These use the same 580 matrices,
-not additional independent workloads. Only documented timing/RSS fields in summary and pilot JSON
+certificates. For each structured mode it compares the retained and regenerated
+`instances.csv` and `summary.json`. The supplemental summary records
+4,760 factor, 4,760 column and 580 permuted schedule checks on the same
+580 matrices, not additional independent workloads. The command regenerates
+and checks event streams in memory; these two output files do not archive
+individual event traces. Only documented timing/RSS fields in summary and pilot JSON
 are ignored; the structured-case summary excludes its elapsed time.  Missing
 directories/files, scientific drift, unsuccessful commands, and timeouts fail
 the gate.  A pass is an internal consistency result only.
