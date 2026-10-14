@@ -24,7 +24,7 @@ controls, and retained results.  It does not require the paper directory.
 The mathematical measures are model-specific.  Residual classes and
 nonnegative integer rank are established concepts; the article's contribution
 is the capability-indexed semantics, strict separations, and their integration
-with typed bag compilation��not a claim to have invented those measures.
+with typed bag compilation—not a claim to have invented those measures.
 
 ## Reproduction
 
@@ -42,7 +42,7 @@ python src/pilot.py
 ```
 
 The two output directories must be absent or empty.  `audit.py` binds each full
-input payload��not merely its ID��to certificate contents, checker returns, CSV
+input payload—not merely its ID—to certificate contents, checker returns, CSV
 rows, summary fields, evidence paths, reference records, and package hygiene.
 `audit.py` and `run.py check` both execute every factor schedule through the
 independent phase/address/liveness checker as part of the payload binding.  Compare generated
