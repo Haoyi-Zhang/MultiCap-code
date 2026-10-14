@@ -30,12 +30,26 @@ def synthesize(table: list[list[Any]], fast_bits: int) -> dict:
     rows=residual_rows(table)
     representatives: list[tuple[Any,...]]=[]
     class_of=[]
-    index={}
-    for row in rows:
-        if row not in index:
-            index[row]=len(representatives)
-            representatives.append(row)
-        class_of.append(index[row])
+    try:
+        for row in rows:
+            hash(row)
+    except TypeError:
+        # Finite JSON/bag outputs may be lists or dictionaries. Their row
+        # equivalence is equality, not an obligation to expose a hash key.
+        for row in rows:
+            found=next((i for i,rep in enumerate(representatives)
+                        if all(a==b for a,b in zip(row,rep))),None)
+            if found is None:
+                found=len(representatives)
+                representatives.append(row)
+            class_of.append(found)
+    else:
+        index={}
+        for row in rows:
+            if row not in index:
+                index[row]=len(representatives)
+                representatives.append(row)
+            class_of.append(index[row])
     k=bit_width(len(representatives))
     slow=max(0,k-fast_bits)
     codes=[format(i,f'0{k}b') if k else '' for i in range(len(representatives))]

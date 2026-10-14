@@ -15,6 +15,8 @@ controls, and retained results.  It does not require the paper directory.
   fragment.
 - `proofs/residual.md` proves the exact finite one-way bit-barrier theorem and
   describes the residual-class compiler.
+  Residual output values may also be finite lists or dictionaries; these use
+  equality-based grouping with the same canonical first-occurrence class order.
 - `proofs/integer-rank.md` proves the positive substitution lemma and exact
   count-word barrier theorem, with a factorization compiler.
 - `proofs/cache.md` proves the occurrence-record product results.
