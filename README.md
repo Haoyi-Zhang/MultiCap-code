@@ -1,149 +1,104 @@
 # Capability-indexed materialization bounds for multiset programs
 
-This standalone repository supports the internal article **Capability-Indexed
-Materialization Bounds for Multiset Programs**.  It contains exact inputs,
-source/interpreters, proof-producing compilers, independent certificate
-checkers, handwritten proofs, a small purpose-built proof kernel, negative
-controls, and retained results.  It does not require the paper directory.
+This standalone artifact accompanies **Capability-Indexed Materialization Bounds
+for Multiset Programs**. It contains deterministic inputs, bag interpreters,
+proof-producing compilers, certificate checkers, written proofs, purpose-built
+proof kernels, negative controls, and retained results. No paper directory,
+external dataset, solver, or network service is required.
 
-## Scientific contents
+## Environment and entry points
 
-- `proofs/capability.md` defines capability signatures, simulation monotonicity,
-  strict same-denotation separations, and the no-denotation-only-bound result.
-- `proofs/replay.md` proves typing, multiplicity preservation, termination, and
-  a sufficient zero-derived-store replay budget for the declared pure bag
-  fragment.
-- `proofs/residual.md` proves the exact finite one-way bit-barrier theorem and
-  describes the residual-class compiler.
-  Residual output values may also be finite lists or dictionaries; these use
-  equality-based grouping with the same canonical first-occurrence class order.
-- `proofs/integer-rank.md` proves the positive substitution lemma and exact
-  count-word barrier theorem, with a factorization compiler.
-- `proofs/cache.md` proves the occurrence-record product results.
-- `formal/` kernel-checks the residual semantic core and 64 polynomial factor
-  identities.  Its README states the exact non-claims.
+The complete workflow requires POSIX/Linux, Python 3.10 or newer, and the
+standard library. Keep assertions enabled (do not use `-O`). The runner and
+pilot use POSIX resource limits; they are not native Windows entry points.
+Run commands from this directory.
 
-The mathematical measures are model-specific.  Residual classes and
-nonnegative integer rank are established concepts; the article's contribution
-is the capability-indexed semantics, strict separations, and their integration
-with typed bag compilation—not a claim to have invented those measures.
+```sh
+python -B audit.py --package-clean
+python -B run.py check
+python -B -m unittest discover -s tests -v
+python -B tests/regression_predicate_dispatch.py -v
+python -B formal/check.py
+```
+
+The audit binds full input payloads to certificates, checker returns, result
+rows, summaries, evidence paths, and reference records. Both the audit and
+`run.py check` execute retained factor schedules through the independent
+phase/address/liveness checker.
 
 ## Reproduction
 
-Use POSIX/Linux with Python 3.10 or newer and the standard library.  Do not use
-Python's `-O` flag.  From the repository root:
+Use fresh output directories; do not overwrite the retained `inputs/` or
+`results/`:
 
 ```sh
-python audit.py --package-clean
-python run.py check
-python run.py reproduce --out /tmp/resource-semantics-reproduction
-python -m unittest discover -s tests -v
-python formal/check.py
-python src/generate_inputs.py --out /tmp/resource-semantics-inputs
-python src/pilot.py
+python -B run.py reproduce --out /tmp/resource-semantics-reproduction
+python -B src/generate_inputs.py --out /tmp/resource-semantics-inputs
+python -B src/pilot.py
 ```
 
-The two output directories must be absent or empty.  `audit.py` binds each full
-input payload—not merely its ID—to certificate contents, checker returns, CSV
-rows, summary fields, evidence paths, reference records, and package hygiene.
-`audit.py` and `run.py check` both execute every factor schedule through the
-independent phase/address/liveness checker as part of the payload binding.  Compare generated
-input files with `inputs/`; `reproduce` reruns the bounded campaign.  The cache
-pilot is a current recomputation and is intentionally separate; its JSON says
-that the earlier raw record was not retained.
+Compare regenerated inputs under `/tmp/resource-semantics-inputs/inputs/` with
+`inputs/`. The pilot prints a current recomputation; its JSON records that an
+earlier raw pilot record was not retained.
 
-Expected main logical counts are:
+For the aggregate reproduction and comparison, use:
 
-- 985 declared program/certificate instances;
-- 896 replay semantic cases;
-- nine occurrence-cache certificates;
-- 64 exact integer-rank packets;
-- all 16 Boolean two-by-two residual functions and 44 capacity variants;
-- 33 legacy controls, split into 12 cache-certificate rejections, eight
-  syntax/type rejections, four semantic differences, two lifecycle tests, and
-  seven positive-source cases;
-- four additional factor-schedule mutation rejections;
-- 30,083 counted validation/transition obligations under the retained legacy
-  counting rule, plus 10,743 event-checked schedules and 313,123 checked events;
-- 71 historical focused unit/mutation/integrity tests (57 original plus 14 boundary regressions); the current source census has 83 discoverable methods, including four later residual-output methods, two unit-schema replay methods, four canonical bag-output methods and two event-campaign regressions;
-- 81 audited scholarly references, each cited and carrying a persistent
-  identifier; and
-- one first-order theorem plus 64 semiring identities checked by the
-  purpose-built kernels.
+```sh
+PYTHONUTF8=1 python -B validation/check_all.py \
+  --work-dir /tmp/p093-scientific-check --out /tmp/artifact-check.json
+```
 
-CPU time, wall time, RSS, PDF bytes, and temporary paths are measurements rather
-than deterministic outputs.  Logical inputs, CSVs, JSON certificates, reference-audit records, and
-checker judgments are deterministic.
+The work directory must not exist and must be outside the repository. The
+aggregate retains command logs and generated outputs, compares all five input
+files and 98 primary result files, and checks both structured validation modes.
+Only documented timing/RSS fields are excluded from comparisons. `--quick`
+omits the full campaign reproduction. See [validation/README.md](validation/README.md)
+for individual commands, structured-case counts, and comparison rules.
 
-## Evidence interpretation
+## Inputs, results, and proofs
 
-`Replay.test` dispatches its four validated predicate kinds directly, preserving
-null-false comparisons and unsupported-kind failures without creating a new
-dictionary of lambdas per comparison. Scan order, occurrence multiplicities,
-closure, read caps and all modeled metrics are unchanged. The separate portable
-`python -B tests/regression_predicate_dispatch.py -v` check uses independent
-literal bag equations and compares every retained semantic result field; CI runs
-it explicitly without changing the historical 71-test census. This is host
-bookkeeping reuse, not a tighter materialization bound or a measured speedup.
+- `inputs/`: semantic programs/databases, cache cases, rank matrices, residual
+  functions, and the rectangle diagnostic.
+- `results/`: logical CSVs, JSON certificates, summaries, negative controls,
+  and retained validation/reproduction outputs.
+- `proofs/`: capability, replay, residual, integer-rank, and occurrence-cache
+  arguments. `claim_evidence_ledger.csv` maps claims to their evidence.
+- `formal/`: one sorted first-order theorem and 64 semiring factor identities;
+  [formal/README.md](formal/README.md) describes the kernel scope.
+- `reference-audit.csv`, `literature-notes.md`, and `external_resources.csv`:
+  reference identities, technical roles, and source provenance.
 
-The source-language oracle intentionally materializes bags; the replay
-interpreter is separate.  The exact rank and cache synthesizers are separate
-from their checkers.  Rank packets include both a factor witness and a Bellman
-potential over every bounded residual state.  Residual packets include the
-reconstructed equivalence classes and shortest fixed-width codes.  Negative
-controls mutate dimensions, partitions, costs, witnesses, potentials, types,
-and semantic operators.
+The primary summary records 985 program/certificate instances: 896 replay
+cases, nine cache packets, 64 rank packets, and 16 residual functions. It retains
+30,083 legacy validation/transition obligations and separately reports 10,743
+event-checked schedules, 313,123 events, 33 legacy controls, and four
+factor-schedule mutation rejections. These counts are distinct from the unit
+test census and the additional structured validation.
 
-Finite checks do not prove the general theorems.  Conversely, successful
-commands do not verify CPython, the operating system, or physical performance.
-The paper and proof documents state which results are handwritten, kernel
-checked, finite checked, or measured.
+Logical inputs, CSVs, certificates, and checker judgments are deterministic.
+CPU/wall time, RSS, temporary paths, and PDF bytes are environmental quantities,
+not deterministic results or physical-performance claims. Finite checks do not
+replace the general proofs, and the custom kernels are not external proof
+assistants.
 
-## Machine boundaries
+## Model conditions
 
-The bit-barrier theorem forbids uncharged input-dependent addresses or trace
-lengths, permits output only after the barrier, and charges bit stores and
-loads.  The positive-word theorem permits only static positive natural
-arithmetic and forbids subtraction, division, bit extraction, branches on
-packed values, and readable output.  Its compiler has exactly two transient
-buffers: prefix T0 accumulates one left summary; the barrier clears T0/T1;
-continuation T0 is the output accumulator and T1 the right linear form; a fixed
-persistent slot is consumed by one fused multiply-add.  The occurrence model charges identity
-records and does not allow multiplicity compression.  Changing any of these
-features changes the capability signature and may change the optimum.
+The bounds are capability-specific. The bit-barrier model uses static
+addressing, charges bit stores/loads, and permits output only after the barrier.
+The positive-word model permits static positive natural arithmetic, with no
+subtraction, division, bit extraction, packed-value branching, or readable
+output. Its compiler uses two transient buffers; the barrier clears both, and
+the continuation consumes persistent slots by fused multiply-add. The
+occurrence model charges identity records rather than compressed multiplicities.
+Changing these conditions may change the optimum.
+
+The source-language oracle materializes bags and is separate from replay.
+The rank/cache synthesizers and their checkers are separate implementations.
+`Replay.test` directly dispatches four validated predicate kinds; the focused
+predicate regression compares literal bag equations and all retained semantic
+fields. This reuses host bookkeeping without changing modeled metrics or
+claiming a measured speedup.
 
 ## Provenance and external use
 
 The evidence is not independently blind-reviewed. Authors must inspect and take responsibility for all content and recheck current venue policies before any external use. No email, account action, external model API, private data, GPU, institutional compute, or human-subject evidence was used.
-
-
-## Additional finite validation
-
-The neutral `validation/` directory contains two post-development robustness
-checks and one fail-closed aggregate command.  They are not external review or
-a statistical held-out study.
-
-```sh
-PYTHONDONTWRITEBYTECODE=1 python3 validation/independent_finite_checks.py \
-  --root . --out /tmp/independent-finite-checks.json
-PYTHONDONTWRITEBYTECODE=1 python3 validation/structured_cases.py \
-  --out-dir /tmp/structured-cases
-PYTHONDONTWRITEBYTECODE=1 python3 validation/check_all.py \
-  --work-dir /tmp/p093-scientific-check --out /tmp/artifact-check.json
-```
-
-The independent script imports none of the project implementation and rechecks
-finite residual encodings, all 256 small two-by-two matrices, exact two-slot
-all-pairs costs through four by four, and all 64 retained rank-witness
-equations.  The structured cases are exact model-relative checks, not production
-performance measurements.  See `validation/README.md`.
-
-The aggregate requires a fresh work directory outside the repository and
-retains full command logs and outputs there, including failed attempts.  It
-compares all five regenerated inputs and all 98 primary reproduced result
-files, allowing only documented timing/RSS differences in summary and pilot
-JSON; scientific counts, certificates, and CSVs must match.  Omitting
-`--work-dir` creates a persistent temporary directory, whose path is reported.
-The supplied scientific-check workflow uses this full command with a bounded
-whole run and always uploads raw outputs.  Its presence is not evidence that
-it has been executed on a remote runner.
